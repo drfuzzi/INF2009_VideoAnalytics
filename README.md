@@ -14,8 +14,8 @@
 ---
 
 **1. Introduction (10 minutes)**
-- Overview of video analytics and its importance.
-- Applications of video processing with Raspberry Pi.
+- Video analytics is an emerging field employed to extract valuable insights from video data. Edge video analytics with real-time processing capabilities is chellenging but important and inevitable due to privacy/security concerns. Also, in many cases redundancy can be avoided to save on the bandwidth requirements (e.g. compress the video to have only key (important) frames). In this lab, few basic and advanced video processing tasks on edge devices is introduced. An overview of the experiments/setup is as follows:
+![image](https://github.com/drfuzzi/INF2009_VideoAnalytics/assets/52023898/882c84dc-1989-4039-807d-554a079e3776)
 
 **2. Setting up the Raspberry Pi (10 minutes)**
 - Booting up the Raspberry Pi.
@@ -26,21 +26,15 @@
   sudo apt upgrade
   ```
 
-**3. Connecting and Testing the Web Camera (15 minutes)**
-- Physically connecting the web camera to the Raspberry Pi.
-- Installing necessary packages:
-  ```bash
-  sudo apt install fswebcam
-  ```
-- Capturing a test image to ensure the camera is functioning:
-  ```bash
-  fswebcam test_image.jpg
-  ```
+**3. Connecting and Testing the Web Camera (5 minutes)**
+- Please ensure the web camera is working and proceed to subsequent steps.
 
-**4. Introduction to Video Processing with Python (20 minutes)**
-- Installing OpenCV:
+**4. Introduction to real-time video processing on raspberry pi (20 minutes)**
+- [MediaPipe](https://developers.google.com/mediapipe) is a framework for building cross platform multimodal applied ML pipelines that consist of fast ML inference, classic computer vision, and media processing (e.g. video decoding). MediaPipe was open sourced at CVPR in June 2019 as v0.5.0.
+- Installing OpenCV and media pipe:
   ```bash
-  sudo pip3 install opencv-python
+  pip install opencv-python
+  pip install mediapipe
   ```
 - Capturing video stream using OpenCV:
   - Displaying a live video feed.
