@@ -30,14 +30,22 @@
 - Please ensure the web camera is working and proceed to subsequent steps.
 
 **4. Introduction to real-time video processing on raspberry pi (20 minutes)**
-- [MediaPipe](https://developers.google.com/mediapipe) is a framework for building cross platform multimodal applied ML pipelines that consist of fast ML inference, classic computer vision, and media processing (e.g. video decoding). MediaPipe was open sourced at CVPR in June 2019 as v0.5.0.
+- **Ensure you will be running the subsequent steps in a new virtual environment.**
+-  [MediaPipe](https://developers.google.com/mediapipe) is a framework for building cross platform multimodal applied ML pipelines that consist of fast ML inference, classic computer vision, and media processing (e.g. video decoding). MediaPipe was open sourced at CVPR in June 2019 as v0.5.0.
 - Installing OpenCV and media pipe:
   ```bash
   pip install opencv-python
   pip install mediapipe
   ```
-- The sample code employs opencv and mediapipe to detect the human hand and subsequently the finger locations as outlined in the below [finger model](https://developers.google.com/mediapipe/solutions/vision/hand_landmarker):
-![image](https://github.com/drfuzzi/INF2009_VideoAnalytics/assets/52023898/1090e213-7a56-4059-9386-50123bd6f8f8)
+- Hand landmark detection
+  - Download the handlandmark detection model:
+    ```bash
+    wget -q https://storage.googleapis.com/mediapipe-models/hand_landmarker/hand_landmarker/float16/1/hand_landmarker.task
+    ``` 
+  - The [sample code](Codes/hand_landmark.py) employs opencv and mediapipe to detect the human hand and subsequently the finger locations (the tip of thumb and index finger as well as a simple logic to predict if the thumb is pointing up) based on the [finger model](https://developers.google.com/mediapipe/solutions/vision/hand_landmarker) outlined below :
+    ![image](https://github.com/drfuzzi/INF2009_VideoAnalytics/assets/52023898/1090e213-7a56-4059-9386-50123bd6f8f8)
+  - Modify the code to show all the 21 finger points and observe the same while moving the hand.
+  - Modify the code to predict the number of fingers and display the same overlaid on the image as text (e.g. if four fingers are raised, display '4' on the screen and if three fingers on one hand and two on the other, the display should be '5').
 
 
 **5. Basic Video Analytics (40 minutes)**
