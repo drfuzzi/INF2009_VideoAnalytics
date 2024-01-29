@@ -36,9 +36,9 @@
   pip install opencv-python
   pip install mediapipe
   ```
-- Capturing video stream using OpenCV:
-  - Displaying a live video feed.
-  - Recording and saving video streams.
+- The sample code employs opencv and mediapipe to detect the human hand and subsequently the finger locations as outlined in the below [finger model](https://developers.google.com/mediapipe/solutions/vision/hand_landmarker):
+![image](https://github.com/drfuzzi/INF2009_VideoAnalytics/assets/52023898/1090e213-7a56-4059-9386-50123bd6f8f8)
+
 
 **5. Basic Video Analytics (40 minutes)**
 - Motion detection: Identifying movement in the video stream.
