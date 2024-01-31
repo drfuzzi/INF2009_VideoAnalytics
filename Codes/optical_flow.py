@@ -32,10 +32,11 @@ def set1stFrame(frame):
     mask = np.zeros_like(frame)
     
     return frame_gray,mask,p0
-        
+
+#%% Lucas Kanade optical flow approach [Ref: https://cseweb.ucsd.edu//classes/sp02/cse252/lucaskanade81.pdf]
 def LucasKanadeOpticalFlow (frame,old_gray,mask,p0):
     
-    # Converting to gray scale as HOG feature extraction in scikit-image works only on gray scale image
+    # Converting to gray scale
     frame_gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
     # calculate optical flow
@@ -61,11 +62,11 @@ def LucasKanadeOpticalFlow (frame,old_gray,mask,p0):
 
 
 #%% 
-step = 16 # configure this if you need other steps...
+step = 16 
 
 def DenseOpticalFlowByLines(frame, old_gray):
     
-    # Converting to gray scale as HOG feature extraction in scikit-image works only on gray scale image
+    # Converting to gray scale
     frame_gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)   
     
     h, w = frame_gray.shape[:2]
