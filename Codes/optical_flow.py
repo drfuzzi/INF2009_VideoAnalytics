@@ -26,7 +26,7 @@ def set1stFrame(frame):
     # Converting to gray scale
     frame_gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
     
-    p0 = cv2.goodFeaturesToTrack(frame_gray, mask=None, **feature_params)
+    p0 = cv2.goodFeaturesToTrack(frame_gray, mask=None, **feature_params) # Corner detection using https://docs.opencv.org/3.4/d4/d8c/tutorial_py_shi_tomasi.html
     
     # Create a mask image for drawing purposes
     mask = np.zeros_like(frame)
@@ -61,7 +61,7 @@ def LucasKanadeOpticalFlow (frame,old_gray,mask,p0):
     return img,old_gray,p0
 
 
-#%% 
+#%% Computes a dense optical flow using the Gunnar Farneback's algorithm.
 step = 16 
 
 def DenseOpticalFlowByLines(frame, old_gray):
@@ -73,10 +73,13 @@ def DenseOpticalFlowByLines(frame, old_gray):
     y, x = np.mgrid[step//2:h:step, step//2:w:step].reshape(2,-1)
     
     flow = cv2.calcOpticalFlowFarneback(old_gray, frame_gray, None,
-                                            0.5, 3, 15, 3, 5, 1.2, 0)    
+                                            0.5, 3, 15, 3, 5, 1.2, 0)  # https://docs.opencv.org/4.x/dc/d6b/group__video__track.html#ga5d10ebbd59fe09c5f650289ec0ece5af 
+    
     fx, fy = flow[y,x].T
+    
+    # Plot the streamlines
     lines = np.vstack([x, y, x+fx, y+fy]).T.reshape(-1, 2, 2)
-    lines = np.int32(lines + 0.5)
+    lines = np.int32(lines + 0.5)    
     cv2.polylines(frame, lines, 0, (0, 255, 0))
     for (x1, y1), (x2, y2) in lines:
         cv2.circle(frame, (x1, y1), 1, (0, 255, 0), -1)
@@ -107,11 +110,11 @@ while True:
         # Capture one frame
         ret, frame = cap.read()  
         
-        # img,old_gray,p0 = LucasKanadeOpticalFlow(frame,old_gray,mask,p0)
+        #img = DenseOpticalFlowByLines(frame, old_gray)
         
-        img = DenseOpticalFlowByLines(frame, old_gray)
+        img,old_gray,p0 = LucasKanadeOpticalFlow(frame,old_gray,mask,p0)
         
-        cv2.imshow("preview", img)
+        cv2.imshow("Optical Flow", img)
        
         if cv2.waitKey(1) & 0xFF == ord('q'):
            break
