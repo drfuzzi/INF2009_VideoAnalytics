@@ -47,6 +47,8 @@ while True:
         # Capture one frame
         ret, frame = cap.read() 
         
+        frame = cv2.flip(frame, 1) # To flip the image to match with camera flip
+        
         # Convert the image from BGR to RGB as required by the TFLite model.
         rgb_image = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
         
