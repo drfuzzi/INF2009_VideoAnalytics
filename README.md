@@ -39,7 +39,10 @@
   ![image](https://github.com/drfuzzi/INF2009_VideoAnalytics/assets/52023898/c5987191-27ff-44f9-ac85-d1a673477dc8) 
   ![image](https://github.com/drfuzzi/INF2009_VideoAnalytics/assets/52023898/f9a6d18e-4973-4af9-80f5-45901d090cc1)
   - **[Important]** You need to comment/uncomment respective lines (line 117/119) to activate the desired results. Modify the parameters (line 12/18) by looking into the OpenCV documentation and observe/note down the observations/conclusions.
-- [MediaPipe](https://developers.google.com/mediapipe) is a framework for building cross platform multimodal applied ML pipelines that consist of fast ML inference, classic computer vision, and media processing (e.g. video decoding). MediaPipe was open sourced at CVPR in June 2019 as v0.5.0.
+
+**5. Advanced Video Analytics (40 minutes)**
+- We will employ a light weight opensource library named *"Mediapipe"* for tasks such as hand landmark detection, hand gesture recognition and object detection using pretrained neural network models.
+- [MediaPipe](https://developers.google.com/mediapipe) is a framework for building cross platform multimodal applied ML pipelines that consist of fast ML inference, classic computer vision, and media processing (e.g. video decoding). MediaPipe was open sourced at CVPR in June 2019 as v0.5.0 and has various lightweight models developed with Tensorflow lite available for usage.
 - Installing media pipe:
   ```bash  
   pip install mediapipe
@@ -54,18 +57,23 @@
   - Modify the code to show all the 21 finger points and observe the same while moving the hand.
   - Modify the code to predict the number of fingers and display the same overlaid on the image as text (e.g. if four fingers are raised, display '4' on the screen and if three fingers on one hand and two on the other, the display should be '5').
 
-
-**5. Basic Video Analytics (40 minutes)**
-- Motion detection: Identifying movement in the video stream.
-- Face detection in real-time using OpenCV's pre-trained classifiers.
-- Basic object tracking based on color or features.
-- Extracting frames from the video stream and processing them.
-
 **6. Advanced Video Analytics (20 minutes)**
-- Introduction to more advanced techniques:
-  - Background subtraction for detecting moving objects.
-  - Utilizing pre-trained deep learning models for object recognition in videos.
-
+- In this section, we will work on more advanced analytics tasks such as hand gesture recognition and object detection based on pretrianed light weight models.
+- Hand gesture recognition
+  - Download the hand gesture recognition model:
+    ```bash
+     wget -O gesture_recognizer.task -q https://storage.googleapis.com/mediapipe-models/gesture_recognizer/gesture_recognizer/float16/1/gesture_recognizer.task
+    ``` 
+  - The [sample code](Codes/hand_gesture.py) shows a real-time hand gesture recongition task. A sample snapshot of the code result for victory sign is shown below: \
+    ![image](https://github.com/drfuzzi/INF2009_VideoAnalytics/assets/52023898/84bf1517-22c0-427a-9ca7-047551f1b50e)
+- Object detection
+  - Download the light weight EfficientDet object detection model:
+    ```bash
+     wget -q -O efficientdet.tflite -q https://storage.googleapis.com/mediapipe-models/object_detector/efficientdet_lite0/int8/1/efficientdet_lite0.tflite
+    ``` 
+  - The [sample code](Codes/obj_detection.py) shows a real-time object detection task.
+  - Based on the above code, write a code to do object detection based video summarization (e.g. for a video with only frames having a cellphone) 
+    
 ---
 
 **Homework/Extended Activities:**
