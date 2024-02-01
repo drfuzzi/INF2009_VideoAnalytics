@@ -77,15 +77,15 @@
 ---
 
 **Homework/Extended Activities:**
-1. Build a surveillance system that sends alerts based on motion detection.
-2. Integrate video analytics with IoT devices, e.g., turning on lights when motion is detected.
-3. Experiment with more advanced tracking algorithms available in OpenCV.
+1. Experiment with more advanced tracking algorithms available in OpenCV.
+2. Build a gesture based video player control (e.g. could use libraries like [Pyautogui](https://pyautogui.readthedocs.io/en/latest/) for the same) 
+3. Build a surveillance system based on video based motion detection.
 
 ---
 
 **Resources:**
 1. Raspberry Pi official documentation.
 2. OpenCV documentation and tutorials.
-3. Online communities and forums related to Raspberry Pi and video analytics.
+3. Mediapipe documentation and tutorials.
 
 ---
