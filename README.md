@@ -42,7 +42,7 @@
 
 **5. Advanced Video Analytics (40 minutes)**
 - We will employ a light weight opensource library named *"Mediapipe"* for tasks such as hand landmark detection, hand gesture recognition and object detection using pretrained neural network models.
-- [MediaPipe](https://developers.google.com/mediapipe) is a framework for building cross platform multimodal applied ML pipelines that consist of fast ML inference, classic computer vision, and media processing (e.g. video decoding). MediaPipe was open sourced at CVPR in June 2019 as v0.5.0 and has various lightweight models developed with Tensorflow lite available for usage.
+- [MediaPipe](https://developers.google.com/mediapipe) is a on-device (*embedded machine learning*) framework for building cross platform multimodal applied ML pipelines that consist of fast ML inference, classic computer vision, and media processing (e.g. video decoding). MediaPipe was open sourced at CVPR in June 2019 as v0.5.0 and has various lightweight models developed with Tensorflow lite available for usage.
 - Installing media pipe:
   ```bash  
   pip install mediapipe
