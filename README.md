@@ -1,6 +1,6 @@
 **Video Analytics with Raspberry Pi 4 using Web Camera**
 
-**Objective:** By the end of this session, participants will understand how to set up a web camera with the Raspberry Pi 4, capture video streams, and perform basic video analytics.
+**Objective:** By the end of this session, participants will understand how to set up a web camera with the Raspberry Pi 4, capture video streams, and perform basic and advanced video analytics.
 
 ---
 
