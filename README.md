@@ -31,10 +31,17 @@
 
 **4. Introduction to real-time video processing on raspberry pi (20 minutes)**
 - **Ensure you will be running the subsequent steps in a new virtual environment.**
--  [MediaPipe](https://developers.google.com/mediapipe) is a framework for building cross platform multimodal applied ML pipelines that consist of fast ML inference, classic computer vision, and media processing (e.g. video decoding). MediaPipe was open sourced at CVPR in June 2019 as v0.5.0.
-- Installing OpenCV and media pipe:
+- Installing OpenCV:
   ```bash
-  pip install opencv-python
+  pip install opencv-python  
+  ```
+- [Optical flow](https://en.wikipedia.org/wiki/Optical_flow) estimation is employed to track moving objects in a video sequence. In this section, we will employ the purely opencv based [sample code](Codes/optical_flow.py) for estimaging the flow using Lucas Kanade Optical Flow approach and Flow Farneback approach. The displays are in the form of streamlines or directional arrows as shown below. \
+  ![image](https://github.com/drfuzzi/INF2009_VideoAnalytics/assets/52023898/c5987191-27ff-44f9-ac85-d1a673477dc8) 
+  ![image](https://github.com/drfuzzi/INF2009_VideoAnalytics/assets/52023898/f9a6d18e-4973-4af9-80f5-45901d090cc1)
+  - [Important] You need to comment/uncomment respective lines (line 
+- [MediaPipe](https://developers.google.com/mediapipe) is a framework for building cross platform multimodal applied ML pipelines that consist of fast ML inference, classic computer vision, and media processing (e.g. video decoding). MediaPipe was open sourced at CVPR in June 2019 as v0.5.0.
+- Installing media pipe:
+  ```bash  
   pip install mediapipe
   ```
 - Hand landmark detection
