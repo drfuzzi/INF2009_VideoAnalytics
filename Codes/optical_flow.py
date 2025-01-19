@@ -39,25 +39,31 @@ def LucasKanadeOpticalFlow (frame,old_gray,mask,p0):
     # Converting to gray scale
     frame_gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
+    
     # calculate optical flow
+    if (p0 is None or len(p0) ==0):
+        p0 = np.array([[50, 50], [100, 100]], dtype=np.float32).reshape(-1, 1, 2)
     p1, st, err = cv2.calcOpticalFlowPyrLK(old_gray, frame_gray,
                                            p0, None, **lk_params)
     
-    # Select good points
-    good_new = p1[st==1]
-    good_old = p0[st==1]
-
-    # draw the tracks
-    for i, (new,old) in enumerate(zip(good_new,good_old)):
-        a,b = new.ravel()
-        c,d = old.ravel()
-        mask = cv2.line(mask, (int(a),int(b)), (int(c),int(d)), color[i].tolist(), 2)
-        frame_gray = cv2.circle(frame_gray, (int(a),int(b)), 5, color[i].tolist(), -1)
-    img = cv2.add(frame, mask)
-
-    # Now update the previous frame and previous points
-    old_gray = frame_gray.copy()
-    p0 = good_new.reshape(-1,1,2)
+    if p1 is not None:    
+    
+        # Select good points (skip no points to avoid errors)
+        good_new = p1[st==1]
+        good_old = p0[st==1]
+    
+        # draw the tracks
+        for i, (new,old) in enumerate(zip(good_new,good_old)):
+            a,b = new.ravel()
+            c,d = old.ravel()
+            mask = cv2.line(mask, (int(a),int(b)), (int(c),int(d)), color[i].tolist(), 2)
+            frame_gray = cv2.circle(frame_gray, (int(a),int(b)), 5, color[i].tolist(), -1)
+        img = cv2.add(frame, mask)
+    
+        # Now update the previous frame and previous points
+        old_gray = frame_gray.copy()
+        p0 = good_new.reshape(-1,1,2)
+    
     return img,old_gray,p0
 
 
@@ -110,9 +116,9 @@ while True:
         # Capture one frame
         ret, frame = cap.read()  
         
-        img = DenseOpticalFlowByLines(frame, old_gray)
+        #img = DenseOpticalFlowByLines(frame, old_gray)
         
-        #img,old_gray,p0 = LucasKanadeOpticalFlow(frame,old_gray,mask,p0)
+        img,old_gray,p0 = LucasKanadeOpticalFlow(frame,old_gray,mask,p0)
         
         cv2.imshow("Optical Flow", img)
        
