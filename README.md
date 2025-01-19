@@ -30,7 +30,7 @@
 - Please ensure the web camera is working and proceed to subsequent steps.
 
 **4. Introduction to real-time video processing on raspberry pi (20 minutes)**
-- **[Important!] Set up and activate a virtual environment named "image" for this experiment (to avoid conflicts in libraries) as below**
+- **[Important!] Set up and activate a virtual environment named "video" for this experiment (to avoid conflicts in libraries) as below**
   ```bash
   sudo apt install python3-venv
   python3 -m venv video
@@ -80,7 +80,7 @@
     
 ---
 
-**Homework/Extended Activities:**
+**[Optional] Homework/Extended Activities:**
 1. Experiment with more advanced tracking algorithms available in OpenCV.
 2. Build a gesture based video player control (e.g. could use libraries like [Pyautogui](https://pyautogui.readthedocs.io/en/latest/) for the same) 
 3. Build a surveillance system based on video based motion detection.
