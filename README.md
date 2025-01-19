@@ -1,11 +1,11 @@
-**Video Analytics with Raspberry Pi 4 using Web Camera**
+**Video Analytics with Raspberry Pi using Web Camera**
 
-**Objective:** By the end of this session, participants will understand how to set up a web camera with the Raspberry Pi 4, capture video streams, and perform basic and advanced video analytics.
+**Objective:** By the end of this session, participants will understand how to set up a web camera with the Raspberry Pi, capture video streams, and perform basic and advanced video analytics.
 
 ---
 
 **Prerequisites:**
-1. Raspberry Pi 4 with Raspbian OS installed.
+1. Raspberry Pi with Raspbian OS installed.
 2. MicroSD card (16GB or more recommended).
 3. Web camera compatible with Raspberry Pi.
 4. Internet connectivity (Wi-Fi or Ethernet).
@@ -30,7 +30,11 @@
 - Please ensure the web camera is working and proceed to subsequent steps.
 
 **4. Introduction to real-time video processing on raspberry pi (20 minutes)**
-- **Ensure you will be running the subsequent steps in a new virtual environment.**
+- **[Important!] Set up and activate a virtual environment named "image" for this experiment (to avoid conflicts in libraries) as below**
+  ```bash
+  sudo apt install python3-venv
+  python3 -m venv video
+  source video/bin/activate
 - Installing OpenCV:
   ```bash
   pip install opencv-python  
