@@ -42,7 +42,7 @@
 - [Optical flow](https://en.wikipedia.org/wiki/Optical_flow) estimation is employed to track moving objects in a video sequence. In this section, we will employ the purely opencv based [sample code](Codes/optical_flow.py) for estimaging the flow using Lucas Kanade Optical Flow approach and Flow Farneback approach. The displays are in the form of streamlines or directional arrows as shown below. \
   ![image](https://github.com/drfuzzi/INF2009_VideoAnalytics/assets/52023898/c5987191-27ff-44f9-ac85-d1a673477dc8) 
   ![image](https://github.com/drfuzzi/INF2009_VideoAnalytics/assets/52023898/f9a6d18e-4973-4af9-80f5-45901d090cc1)
-  - **[Important]** You need to comment/uncomment respective lines (line 117/119) to activate the desired results. Modify the parameters (line 12/18) by looking into the OpenCV documentation and observe/note down the observations/conclusions.
+  - **[Important]** You need to comment/uncomment respective lines (line 119/121) to activate the desired results. Modify the parameters (line 12/18) by looking into the OpenCV documentation and observe/note down the observations/conclusions.
 
 **5. Advanced Video Analytics (40 minutes)**
 - We will employ a light weight opensource library named *"Mediapipe"* for tasks such as face landmark detection, pose estimation, hand landmark detection, hand gesture recognition and object detection using pretrained neural network models.
