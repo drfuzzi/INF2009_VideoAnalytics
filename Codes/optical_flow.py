@@ -116,9 +116,9 @@ while True:
         # Capture one frame
         ret, frame = cap.read()  
         
-        #img = DenseOpticalFlowByLines(frame, old_gray)
+        img = DenseOpticalFlowByLines(frame, old_gray)
         
-        img,old_gray,p0 = LucasKanadeOpticalFlow(frame,old_gray,mask,p0)
+        #img,old_gray,p0 = LucasKanadeOpticalFlow(frame,old_gray,mask,p0)
         
         cv2.imshow("Optical Flow", img)
        
