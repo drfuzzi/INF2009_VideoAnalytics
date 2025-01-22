@@ -30,7 +30,7 @@
 - Please ensure the web camera is working and proceed to subsequent steps.
 
 **4. Introduction to real-time video processing on raspberry pi (20 minutes)**
-- **[Important!] Set up and activate a virtual environment named "video" for this experiment (to avoid conflicts in libraries) as below. You can also reuse the virtual environment "image" also as we are employing opencv and mediapipe libraries for video analytics also**
+- **[Important!] Set up and activate a virtual environment named "video" for this experiment (to avoid conflicts in libraries) as below. You can also reuse the virtual environment "image" as we are employing opencv and mediapipe libraries for video analytics**
   ```bash
   sudo apt install python3-venv
   python3 -m venv video
